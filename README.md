@@ -41,8 +41,3 @@ spring.datasource.username=root
 spring.datasource.password=1234
 
 If your MySQL password is different, change it in application.properties.
-
-## How to Run the Project
-
-Open the project folder in your IDE, then run the main class:
-StudentManagementApplication.java
