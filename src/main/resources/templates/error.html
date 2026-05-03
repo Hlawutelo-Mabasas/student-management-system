@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Something went wrong</title>
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<main class="page narrow-page">
+    <section class="panel">
+        <h1>Something went wrong</h1>
+        <p th:text="${errorMessage}">An error occurred.</p>
+        <a href="students.html" th:href="@{/}">Back to students</a>
+    </section>
+</main>
+
+</body>
+</html>

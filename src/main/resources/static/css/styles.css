@@ -1,0 +1,183 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #eef2f6;
+    color: #1f2933;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    width: min(1000px, calc(100% - 32px));
+    margin: 40px auto;
+}
+
+.narrow-page {
+    width: min(560px, calc(100% - 32px));
+}
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #d7dee8;
+    border-radius: 6px;
+    box-shadow: 0 10px 28px rgba(31, 41, 51, 0.08);
+    margin-bottom: 24px;
+    padding: 24px;
+}
+
+h1,
+h2 {
+    margin: 0 0 18px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+.student-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.student-form.stacked {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+label {
+    display: grid;
+    gap: 6px;
+    font-weight: 600;
+}
+
+input {
+    border: 1px solid #bcccdc;
+    border-radius: 4px;
+    font: inherit;
+    min-height: 42px;
+    padding: 10px 12px;
+}
+
+input:focus {
+    border-color: #2563eb;
+    outline: 3px solid rgba(37, 99, 235, 0.14);
+}
+
+button,
+.form-actions a,
+.actions a,
+.panel > a {
+    background: #2563eb;
+    border: 0;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.2;
+    padding: 10px 14px;
+    text-decoration: none;
+}
+
+button:hover,
+.form-actions a:hover,
+.actions a:hover,
+.panel > a:hover {
+    background: #1d4ed8;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border-bottom: 1px solid #d9e2ec;
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #f8fafc;
+    font-weight: 700;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.link-button {
+    background: #dc2626;
+}
+
+.link-button:hover {
+    background: #b91c1c;
+}
+
+.empty-state {
+    color: #62748e;
+    text-align: center;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+    .page,
+    .narrow-page {
+        margin: 20px auto;
+        width: min(100% - 20px, 1000px);
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .student-form,
+    .actions,
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        border-bottom: 1px solid #d9e2ec;
+        padding: 12px 0;
+    }
+
+    td {
+        border: 0;
+        padding: 8px 0;
+    }
+}

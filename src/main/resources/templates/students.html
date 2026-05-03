@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<main class="page">
+    <section class="panel">
+        <h1>Student Management</h1>
+
+        <form class="student-form" action="/students" method="post">
+            <input type="text" name="name" placeholder="Student name" required>
+            <input type="email" name="email" placeholder="Email address" required>
+            <button type="submit">Add Student</button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Registered Students</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${#lists.isEmpty(students)}">
+                    <td colspan="4" class="empty-state">No students added yet.</td>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.studentNumber}"></td>
+                    <td th:text="${student.name}"></td>
+                    <td th:text="${student.email}"></td>
+                    <td class="actions">
+                        <a href="#" th:href="@{/students/{id}/edit(id=${student.id})}">Edit</a>
+                        <form action="#" th:action="@{/students/{id}/delete(id=${student.id})}" method="post" data-confirm-delete th:attr="data-student-name=${student.name}">
+                            <button type="submit" class="link-button">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr th:remove="all">
+                    <td>222223219</td>
+                    <td>Mabasa Hlawutelo</td>
+                    <td>mabasas.hlawutelo@gmail.com</td>
+                    <td class="actions">
+                        <a href="edit-student.html">Edit</a>
+                        <form action="#" method="post" data-confirm-delete data-student-name="Mabasa Hlawutelo">
+                            <button type="submit" class="link-button">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</body>
+</html>
